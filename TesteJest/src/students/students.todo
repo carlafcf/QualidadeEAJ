@@ -1,0 +1,7 @@
+#Regras para os estudantes
+
+Regras de negócio:
+    - A nota final do aluno deve ser composta pela soma de suas notas
+    - Se uma das notas do aluno for 0, a nota final será 0
+    - Se o aluno tiver mais do que 5 notas, a nota final deve ser multiplicada por 2
+    - Se alguma das notas for maior do que 9, seu valor deve ser multiplicado por 2

@@ -10,7 +10,7 @@ let dao
 let projectRepo
 let taskRepo
 
-describe('Análise das projetos', () => {
+describe('Análise dos projetos', () => {
     
     beforeAll(() => {
         return new Promise((resolve, reject) => {
@@ -25,15 +25,17 @@ describe('Análise das projetos', () => {
         })
     })
 
-    it ('Em um projeto com 3 tarefas e 1 delas completa (id=2), o % completas é 33,3%', () => {
-        const projectId=2
-        return (project.completedTaks(projectRepo, taskRepo, projectId))
-            .then((data) => expect(data).toBe(33.3));
+    it ('Deve retornar 33,3% como %completude no projeto (id=2) com 3 tarefas, sendo 1 completada', () => {
+        const projectId = 2
+        return (project.completedTasks(projectRepo,taskRepo,projectId))
+                .then((data) => expect(data).toBe(33.3));
     })
 
-    it ('O tempo restante de um projeto (id=2) é 720', () => {
-        const projectId=2
-        return (project.remainingTime(projectRepo, taskRepo, projectId))
-            .then((data) => expect(data).toBe(720));
+    it ('Deve retornar 720 no tempo restante do projeto (id=2)', () => {
+        const projectId = 2
+        return (project.remainingTime(projectRepo,taskRepo,projectId))
+                .then((data) => expect(data).toBe(720));
     })
+
+   
 })

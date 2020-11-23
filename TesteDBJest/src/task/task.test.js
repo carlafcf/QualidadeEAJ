@@ -25,23 +25,24 @@ describe('Análise das tarefas', () => {
         })
     })
 
-    it ('Adicionando uma tarefa em um projeto (id=1) que já tem 5 tarefas incompletas, a tarefa não é adicionada', () => {
-        const name="Tarefa recusada"
-        const description="Essa tarefa tentará ser adicionada em um projeto que já possui 5 tarefas incompletas, e não será adicionada"
-        const duration=120
-        const isComplete=0
-        const projectId=1
+    it ('Deve recusar criação de tarefa no projeto de id 1 (6 tarefas incompletas)', () => {
+        const name = "Tarefa recusada"
+        const description = "Essa tarefa tentará ser adicionada em um projeto que já possui 5 tarefas incompletas, e não será adicionada"
+        const duration = 120
+        const isComplete = 0
+        const projectId = 1
         return (task.createTask(projectRepo, taskRepo, name, description, duration, isComplete, projectId))
             .then((data) => expect(data).toBe('Refused'));
     })
 
-    it ('Adicionando uma tarefa em um projeto (id=2) que não tem 5 tarefas incompletas, a tarefa é adicionada', () => {
-        const name="Tarefa confirmada"
-        const description="Essa tarefa tentará ser adicionada em um projeto que não possui 5 tarefas incompletas, e será adicionada"
-        const duration=120
-        const isComplete=0
-        const projectId=2
+    it ('Deve aceitar criação de tarefa no projeto de id 2 (2 tarefas incompletas)', () => {
+        const name = "Tarefa confirmada"
+        const description = "Essa tarefa tentará ser adicionada em um projeto que possui 2 tarefas incompletas, e será adicionada"
+        const duration = 120
+        const isComplete = 0
+        const projectId = 2
         return (task.createTask(projectRepo, taskRepo, name, description, duration, isComplete, projectId))
             .then((data) => expect(data).toBe('Confirmed'));
     })
+
 })

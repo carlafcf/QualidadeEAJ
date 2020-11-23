@@ -1,5 +1,7 @@
 // main.js
 
+// Tutorial: https://stackabuse.com/a-sqlite-tutorial-with-node-js/
+
 const Promise = require('bluebird')
 const AppDAO = require('./src/db/dao')
 const ProjectRepository = require('./src/project/project_repository')

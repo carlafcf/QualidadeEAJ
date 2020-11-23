@@ -65,20 +65,24 @@ class ProjectRepository {
     getCompletedTasks(projectId) {
       return this.dao.all(
         `SELECT * FROM tasks WHERE projectId = ? and isComplete=1`,
-        [projectId])
+          [projectId]
+      )
     }
 
     getIncompletedTasks(projectId) {
       return this.dao.all(
         `SELECT * FROM tasks WHERE projectId = ? and isComplete=0`,
-        [projectId])
+          [projectId]
+      )
     }
 
     getRemainingTime(projectId) {
       return this.dao.all(
         `SELECT duration FROM tasks WHERE projectId = ? and isComplete=0`,
-        [projectId])
+          [projectId]
+      )
     }
+
   }
   
   module.exports = ProjectRepository;

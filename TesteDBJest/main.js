@@ -16,7 +16,7 @@ function main() {
     // resetDB(dao)
     // createProject1(dao)
     // createProject2(dao)
-    readDB(dao)
+    // readDB(dao)
   });
 
 }

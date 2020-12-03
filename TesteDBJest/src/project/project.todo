@@ -4,8 +4,11 @@ Projetos adicionados:
     - Projeto 1: 6 tarefas incompletas (60, 120, 300, 10, 100, 50) e 0 tarefas completas
     - Projeto 2: 2 tarefas incompletas (120, 300) e 1 tarefa completa (100)
 
+    - Projeto 1: tempo restante: 940
+    - Projeto 2: tempo restante: 720
+
 Regras:
     Não é possível ter mais do que 5 tarefas incompletas em um projeto
     Para indicar o percentual de tarefas completas de um projeto, deve-se fazer um arredondamento com uma casa decimal
-    ☐ Tarefas com uma duração maior do que 240 minutos, contam o dobro do tempo para a contagem total de tempo restante do projeto
-    ☐ Apenas tarefas incompletas contam no tempo restante da tarefa
+    Tarefas com uma duração maior do que 240 minutos, contam o dobro do tempo para a contagem total de tempo restante do projeto
+    Apenas tarefas incompletas contam no tempo restante da tarefa

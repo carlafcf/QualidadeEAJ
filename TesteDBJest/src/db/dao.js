@@ -5,7 +5,7 @@ const Promise = require('bluebird')
 
 class AppDAO {
   constructor(dbFilePath) {
-    this.db = new sqlite3.Database(':memory', (err) => {
+    this.db = new sqlite3.Database('_memory', (err) => {
       if (err) {
         // console.log('Could not connect to database', err)
       } else {

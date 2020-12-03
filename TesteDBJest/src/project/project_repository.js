@@ -62,25 +62,25 @@ class ProjectRepository {
           [projectId])
     }
 
-    getCompletedTasks(projectId) {
-      return this.dao.all(
-        `SELECT * FROM tasks WHERE projectId = ? and isComplete=1`,
+    getIncompletedTasks(projectId) {
+        return this.dao.all(
+          `SELECT * FROM tasks WHERE projectId = ? and isComplete=0`,
           [projectId]
-      )
+        )
     }
 
-    getIncompletedTasks(projectId) {
-      return this.dao.all(
-        `SELECT * FROM tasks WHERE projectId = ? and isComplete=0`,
+    getCompletedTasks(projectId) {
+        return this.dao.all(
+          `SELECT * FROM tasks WHERE projectId = ? and isComplete=1`,
           [projectId]
-      )
+        )
     }
 
     getRemainingTime(projectId) {
-      return this.dao.all(
-        `SELECT duration FROM tasks WHERE projectId = ? and isComplete=0`,
+        return this.dao.all(
+          `SELECT duration FROM tasks WHERE projectId = ? and isComplete=0`,
           [projectId]
-      )
+        )
     }
 
   }

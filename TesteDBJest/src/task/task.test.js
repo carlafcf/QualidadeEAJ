@@ -25,24 +25,24 @@ describe('Análise das tarefas', () => {
         })
     })
 
-    it ('Deve recusar criação de tarefa no projeto de id 1 (6 tarefas incompletas)', () => {
-        const name = "Tarefa recusada"
-        const description = "Essa tarefa tentará ser adicionada em um projeto que já possui 5 tarefas incompletas, e não será adicionada"
+    it ('Deve retornar REFUSED na tentativa de adicionar tarefas no projeto id=1', () => {
+        const name="Tarefa recusada"
+        const description="Tarefa recusada"
         const duration = 120
-        const isComplete = 0
-        const projectId = 1
-        return (task.createTask(projectRepo, taskRepo, name, description, duration, isComplete, projectId))
-            .then((data) => expect(data).toBe('Refused'));
+        const isComplete=0
+        const projectId=1
+        return (task.createTask(projectRepo,taskRepo,name,description,duration,isComplete,projectId))
+                .then((data) => expect(data).toBe('Refused'));
     })
 
-    it ('Deve aceitar criação de tarefa no projeto de id 2 (2 tarefas incompletas)', () => {
-        const name = "Tarefa confirmada"
-        const description = "Essa tarefa tentará ser adicionada em um projeto que possui 2 tarefas incompletas, e será adicionada"
+    it ('Deve retornar ACCEPTED na tentativa de adicionar tarefas no projeto id=2', () => {
+        const name="Tarefa aceitada"
+        const description="Tarefa aceitada"
         const duration = 120
-        const isComplete = 0
-        const projectId = 2
-        return (task.createTask(projectRepo, taskRepo, name, description, duration, isComplete, projectId))
-            .then((data) => expect(data).toBe('Confirmed'));
+        const isComplete=0
+        const projectId=2
+        return (task.createTask(projectRepo,taskRepo,name,description,duration,isComplete,projectId))
+                .then((data) => expect(data).toBe('Accepted'));
     })
 
 })
